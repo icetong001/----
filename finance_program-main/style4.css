@@ -1,0 +1,84 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Noto Serif TC", serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: normal;
+  }
+  .headerTitle {
+    font-size: 2.5rem;
+  }
+  .headerText {
+    font-size: 1rem;
+  }
+  header {
+    background-color: rgb(190, 223, 142);
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav {
+    background-color: rgb(197, 247, 185);
+  }
+  nav ul {
+    display: flex;
+    padding-left: 1rem;
+    list-style-type: none;
+  }
+  nav ul li {
+    display: flex;
+  }
+  nav ul li a {
+    padding: 0.75rem calc(9vw - 0.5rem);
+    color: rgb(7, 0, 0);
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+  nav ul li a:hover {
+    background-color: rgb(234, 243, 227);
+  }
+  main {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  section.left,
+  section.right {
+    padding: 1.5rem;
+  }
+  section.right h4 {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+  section.left {
+    background-color: aqua;
+    flex: 3;
+  }
+  section.left div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+  }
+  section.right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(1, 37, 144);
+    flex: 1;
+  }
+  section.right p {
+    margin: 1 1 200px;
+  }
+
+  

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="./pics/miia.jfif" />
+    <title>生活開支</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("form").submit(function (event) {
+          event.preventDefault(); // 阻止表单默认提交
+
+          var input_value = $("#input_name").val(); // 获取输入值
+
+          // 发送POST请求到后端处理
+          $.ajax({
+            type: "POST",
+            url: "/",
+            data: { input_name: input_value },
+            success: function (data) {
+              $("#result").html(data); // 更新计算结果和图表
+            },
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h2>輸入值：</h2>
+    <form>
+      <label for="input_name">輸入值：</label>
+      <input type="text" id="input_name" name="input_name" />
+      <input type="submit" value="确认" />
+    </form>
+
+    <div id="result">
+      {% if result %}
+      <h2>計算結果：</h2>
+      <p>生活支出: {{ result[0] }}</p>
+      <p>儲蓄與投資: {{ result[1] }}</p>
+      <p>風險管理: {{ result[2] }}</p>
+      <img src="./static/chart.png" alt="Pie Chart" />
+      {% endif %}
+    </div>
+    <div
+      id="clippingBounds"
+      style="height: 478px; left: 219.992px; width: 401.008px; opacity: 1"
+    >
+  </body>
+</html>
